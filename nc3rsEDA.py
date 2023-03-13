@@ -3,6 +3,24 @@ from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
 
+def property_dict_to_cypher(_dict):
+    _i = 0
+    _pstr = "{"
+    for _k, _v in _dict.items():
+        _val = ""
+        if not _v:
+            _pstr += f"{_k}: null"
+        elif type(_v) == str: 
+            _pstr += f"{_k}: \"{_v}\""
+        else:
+            _pstr += f"{_k}: {_v}"
+        _i += 1
+        if _i < len(_dict):
+            _pstr += ", "
+    _pstr += "}"
+    return _pstr
+
+
 class Node():
     
     def __init__(self, node, gid):
@@ -43,6 +61,14 @@ class Node():
             "properties": self.property,
             "style": {}
         }
+
+    def fstr_neo4j_create(self, use_gid=True):
+        _tmp = f"({self.gid}:{':'.join(self.labels)}"
+        if len(self.property) > 0: 
+            _tmp += f" {property_dict_to_cypher(self.property)}"
+        _tmp += ")"
+        return _tmp
+
         
 class Edge():
     
@@ -89,6 +115,16 @@ class Edge():
             "properties": self.property,
             "style": {}
         }
+
+    def fstr_neo4j_create(self, gid_map, use_gid=True):
+        _id = self.gid
+        _fr = gid_map[self.incoming]
+        _to = gid_map[self.outgoing]
+        _tmp = f"({_fr})-[{_id}:{self.type}" 
+        if len(self.property) > 0: 
+            _tmp += f" {property_dict_to_cypher(self.property)}"
+        _tmp += f"]->({_to})"
+        return _tmp
 
     
 class Graph():
@@ -147,6 +183,9 @@ class Graph():
             self.__gid[_n.uid] = _n.gid
         for _e in self.edges().values():
             self.__gid[_e.uid] = _e.gid
+
+    def map(self):
+        return self.__gid
     
     def create_nx_graph(self):
         self.__G = nx.Graph()
@@ -255,3 +294,23 @@ class Graph():
         else:
             with open(fpath, 'w') as _of:
                 json.dump(_darrows, _of, indent=indent)
+
+    def export_neo4j_create(self, use_gid=True):
+        _i = 0
+        for _n in self.nodes().values():
+            _fstr = _n.fstr_neo4j_create(use_gid=use_gid)
+            if _i > 0:
+                print(_fstr + ",")
+            else:
+                print("CREATE " + _fstr + ",")
+            _i += 1
+        _i = 0
+        _l = len(self.edges())
+        for _e in self.edges().values():
+            _fstr = _e.fstr_neo4j_create(self.__gid, use_gid=use_gid)
+            if _i < _l - 1:
+                print(_fstr + ",")
+            else:
+                print(_fstr)
+            _i += 1
+        return
