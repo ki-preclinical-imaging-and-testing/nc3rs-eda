@@ -1,0 +1,752 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "oryx_EC08DE2B-AB9A-4D0D-B9C6-4C1325D08C76",
+        "position": {
+          "x": 952.5,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Measurement"
+        ],
+        "properties": {
+          "description": "",
+          "timing": "1h after THC/veh injection",
+          "blind_measurement": "animals individually coded",
+          "reason_for_not_blinding": "",
+          "additional_information": "average temperature over 5 min",
+          "text": "Measurement : body temperature"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_7D22B9C7-F193-40BA-B31A-6D9F1A423D93",
+        "position": {
+          "x": 762.5,
+          "y": 319.001526
+        },
+        "caption": "",
+        "labels": [
+          "Pharmacological_intervention"
+        ],
+        "properties": {
+          "description": "Vehicle",
+          "drug_and_dose": "20% DMSO, 1 ml",
+          "mode_of_administration": "intraperitoneal",
+          "mode_of_administration_if_other": "",
+          "adverse_effects": "none expected",
+          "timing": "",
+          "additional_information": "",
+          "text": "Pharmacological intervention 1"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_60D2D13D-1474-461B-92DD-9507C12A963F",
+        "position": {
+          "x": 762.5,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Pharmacological_intervention"
+        ],
+        "properties": {
+          "description": "",
+          "drug_and_dose": "THC 1mg/kg",
+          "mode_of_administration": "intraperitoneal",
+          "mode_of_administration_if_other": "",
+          "adverse_effects": "impaired coordination, dizziness",
+          "timing": "",
+          "additional_information": "",
+          "text": "Pharmacological intervention 2"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_1F9CF2D0-AEB6-4BD2-9433-DBBD33359151",
+        "position": {
+          "x": 762.5,
+          "y": 559.001526
+        },
+        "caption": "",
+        "labels": [
+          "Pharmacological_intervention"
+        ],
+        "properties": {
+          "description": "",
+          "drug_and_dose": "THC 3 mg/kg",
+          "mode_of_administration": "intraperitoneal",
+          "mode_of_administration_if_other": "",
+          "adverse_effects": "impaired coordination, dizziness",
+          "timing": "",
+          "additional_information": "",
+          "text": "Pharmacological intervention 3"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_6ADA59C6-4F05-4BC8-B301-36C3979CC1E2",
+        "position": {
+          "x": 1251.503294,
+          "y": 535.5980710087226
+        },
+        "caption": "",
+        "labels": [
+          "Data_transformation"
+        ],
+        "properties": {
+          "description": "",
+          "outcome_expressed_as": "raw values",
+          "outcome_expressed_as_other": "",
+          "transformation_to_normalise_data": "log10",
+          "transformation_if_other": "",
+          "additional_information": "variability is expected to increase with the size of the response",
+          "text": "Data transformation: log10"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_F633FA6C-DEE8-4EA5-BA97-7152FFFDC3D6",
+        "position": {
+          "x": 270.2354525304564,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Surgical_intervention"
+        ],
+        "properties": {
+          "description": "implantation of telemetry transmitters i.p.",
+          "surgery": "laparotomy",
+          "pre_op_analgesia_regimen": "carprofen 5 mg/kg s.c.",
+          "post_op_analgesia_regimen": "carprofen 5 mg/kg s.c.",
+          "anaesthetic_used": "isoflurane",
+          "duration_of_anaesthesia_in_mins": 15,
+          "success_rate_as_percentage": 100,
+          "adverse_effects": "",
+          "timing": "1 week before experiment",
+          "additional_information": "",
+          "text": "Surgical intervention : telemetry implentation"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_9619A14B-F440-4300-B2C3-A025EC483596",
+        "position": {
+          "x": 141.75658045,
+          "y": 126.75658235000002
+        },
+        "caption": "",
+        "labels": [
+          "Experiment"
+        ],
+        "properties": {
+          "description": "https://eda.nc3rs.org.uk/guide-example5",
+          "null_hypothesis": "THC does not have an effect on body temperature",
+          "alternative_hypothesis": "THC affects body temperature",
+          "effect_of_interest": "Difference in body temperature",
+          "effect_size": "",
+          "justification_for_effect_size": "",
+          "approval_number": "",
+          "additional_information": "",
+          "text": "Experiment : Effect of THC on body temperature"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_574BA78F-DD20-42F2-8366-28E24B49D8B4",
+        "position": {
+          "x": 338.730232595,
+          "y": 126.75658235
+        },
+        "caption": "",
+        "labels": [
+          "Animal"
+        ],
+        "properties": {
+          "description": "",
+          "species": "rat",
+          "species_if_other": "",
+          "strain": "Fisher 344",
+          "strain_type": "inbred",
+          "sex": "male",
+          "age_mean": 10,
+          "age_range": "9-11",
+          "age_unit": "week",
+          "age_unit_if_other": "",
+          "weight_mean": 250,
+          "weight_range": "230-270",
+          "weight_unit": "g",
+          "weight_unit_if_other": "",
+          "genetic_background": "",
+          "previous_procedures": "none",
+          "number_of_animals_per_cage": "",
+          "supplier": "",
+          "additional_information": "",
+          "text": "Animal characteristics: male Fisher 344 rats"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_72C196D1-9304-4AE1-8135-B7E8E00800C2",
+        "position": {
+          "x": 79.00152600000001,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Group"
+        ],
+        "properties": {
+          "description": "",
+          "number_of_animals": 24,
+          "planned_number_of_experimental_units": 24,
+          "justification_for_sample_size": "power calculation for unpaired t-test (ES=1, SD=0.55, sig=0.05, power:0.9, 2-sided)",
+          "actual_number_of_experimental_units": "",
+          "role_in_experiment": "pool",
+          "role_if_other": "",
+          "additional_information": "",
+          "text": "Pool group"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_4B442D66-9E93-49CD-AC52-D53970B85213",
+        "position": {
+          "x": 210.0,
+          "y": 550.0128085
+        },
+        "caption": "",
+        "labels": [
+          "Experimental_unit"
+        ],
+        "properties": {
+          "description": "",
+          "experimental_unit_is": "animal",
+          "experimental_unit_if_other": "",
+          "additional_information": "",
+          "text": "Experimental unit: individual rat"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "position": {
+          "x": 432.7354525304564,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Allocation"
+        ],
+        "properties": {
+          "description": "",
+          "randomisation_strategy": "randomisation within blocks",
+          "randomisation_strategy_if_other": "",
+          "what_is_randomised": "experimental units to treatment",
+          "randomisation_procedure": "EDA spreadsheet",
+          "randomisation_procedure_if_other": "",
+          "blind_allocation": "treatments coded for individual animals",
+          "reason_for_not_blinding": "",
+          "additional_information": "",
+          "text": "Allocation: block randomisation"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_EDFC434D-224D-4307-85BD-7C62C4ED00E8",
+        "position": {
+          "x": 576.7369785304564,
+          "y": 319.001526
+        },
+        "caption": "",
+        "labels": [
+          "Group"
+        ],
+        "properties": {
+          "description": "",
+          "number_of_animals": 8,
+          "planned_number_of_experimental_units": 8,
+          "justification_for_sample_size": "",
+          "actual_number_of_experimental_units": "",
+          "role_in_experiment": "control/comparator",
+          "role_if_other": "",
+          "additional_information": "",
+          "text": "Group 1"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_65659885-3692-43A7-841C-38769DC89397",
+        "position": {
+          "x": 576.7369785304564,
+          "y": 439.001526
+        },
+        "caption": "",
+        "labels": [
+          "Group"
+        ],
+        "properties": {
+          "description": "",
+          "number_of_animals": 8,
+          "planned_number_of_experimental_units": 8,
+          "justification_for_sample_size": "",
+          "actual_number_of_experimental_units": "",
+          "role_in_experiment": "test",
+          "role_if_other": "",
+          "additional_information": "",
+          "text": "Group 2"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_EAC972AF-784F-4183-A6F6-1B7D0FD111FE",
+        "position": {
+          "x": 576.7369785304564,
+          "y": 559.001526
+        },
+        "caption": "",
+        "labels": [
+          "Group"
+        ],
+        "properties": {
+          "description": "",
+          "number_of_animals": 8,
+          "planned_number_of_experimental_units": 8,
+          "justification_for_sample_size": "",
+          "actual_number_of_experimental_units": "",
+          "role_in_experiment": "test",
+          "role_if_other": "",
+          "additional_information": "",
+          "text": "Group 3"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_1991F846-7BFD-422A-A43C-0870A7F9CC41",
+        "position": {
+          "x": 1049.682665,
+          "y": 537.0980710087226
+        },
+        "caption": "",
+        "labels": [
+          "Outcome_measure"
+        ],
+        "properties": {
+          "description": "",
+          "continuous_or_categorical": "continuous or discrete",
+          "anticipated_standard_deviation": 1.5,
+          "is_primary_outcome_measure": "yes",
+          "additional_information": "",
+          "text": "Outcome measure: temperature"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_A3E5B0B7-5A56-47C0-9159-5EE8026A7BB9",
+        "position": {
+          "x": 1441.1634765000001,
+          "y": 535.5980710087226
+        },
+        "caption": "",
+        "labels": [
+          "Analysis"
+        ],
+        "properties": {
+          "description": "",
+          "planned_method_of_analysis": "one way independent ANOVA with blocking factor(s)",
+          "planned_method_of_analysis_if_other": "",
+          "post_hoc_test": "",
+          "multiple_testing_correction": "",
+          "statistical_assumptions_assessed_by": "normal probability plot",
+          "blind_analysis": "groups coded",
+          "reason_for_not_blinding": "",
+          "is_primary_analysis": "yes",
+          "statistical_package_used": "",
+          "p_value_calculation": "",
+          "additional_information": "",
+          "method_of_analysis_used": "",
+          "method_of_analysis_used_if_other": "",
+          "reason_for_not_using_planned_method": "",
+          "text": "Analysis : One way ANOVA with one blocking factor"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_607A73B2-3FB4-41CD-8003-4B386C502EA1",
+        "position": {
+          "x": 1200.0,
+          "y": 385.0128085
+        },
+        "caption": "",
+        "labels": [
+          "Variable_of_interest"
+        ],
+        "properties": {
+          "description": "",
+          "continuous_or_categorical": "categorical, ordinal, nominal or binary",
+          "allocation_of_experimental_units_to_variable_categories": "units randomised to categories",
+          "is_repeated_factor": "no",
+          "additional_information": "",
+          "text": "Independent variable of interest: THC"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_86BFA1BB-E9D5-438A-A5CF-E2A61B7603EB",
+        "position": {
+          "x": 1414.05665,
+          "y": 385.0128085
+        },
+        "caption": "",
+        "labels": [
+          "Variable_category"
+        ],
+        "properties": {
+          "description": "",
+          "additional_information": "",
+          "text": "1 mg/kg"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_9EBFFFDE-03F3-4C2E-953C-082A05273C98",
+        "position": {
+          "x": 1414.05665,
+          "y": 365.0128085
+        },
+        "caption": "",
+        "labels": [
+          "Variable_category"
+        ],
+        "properties": {
+          "description": "",
+          "additional_information": "",
+          "text": "Vehicle"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_5A200187-C4B8-4090-9AF7-89FD6DD92EDF",
+        "position": {
+          "x": 1414.05665,
+          "y": 405.0128085
+        },
+        "caption": "",
+        "labels": [
+          "Variable_category"
+        ],
+        "properties": {
+          "description": "",
+          "additional_information": "",
+          "text": "3 mg/kg"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_5CA98ED5-26AC-44DD-A6A2-6BFC670A9453",
+        "position": {
+          "x": 1200.0,
+          "y": 682.0
+        },
+        "caption": "",
+        "labels": [
+          "Nuisance_variable"
+        ],
+        "properties": {
+          "description": "",
+          "continuous_or_categorical": "categorical, ordinal, nominal or binary",
+          "how_is_variable_accounted_for": "blocked",
+          "allocation_of_experimental_units_to_variable_categories": "units randomised to categories",
+          "additional_information": "",
+          "text": "Nuisance variable 1: time of the day"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_8E81820C-3CD0-499F-8306-8450F5FFECBF",
+        "position": {
+          "x": 1414.05665,
+          "y": 672.0
+        },
+        "caption": "",
+        "labels": [
+          "Variable_category"
+        ],
+        "properties": {
+          "description": "",
+          "additional_information": "",
+          "text": "am"
+        },
+        "style": {}
+      },
+      {
+        "id": "oryx_E7D8D852-3449-47C7-B271-914489BE1F48",
+        "position": {
+          "x": 1414.05665,
+          "y": 692.0
+        },
+        "caption": "",
+        "labels": [
+          "Variable_category"
+        ],
+        "properties": {
+          "description": "",
+          "additional_information": "",
+          "text": "pm"
+        },
+        "style": {}
+      }
+    ],
+    "relationships": [
+      {
+        "id": "oryx_6B6458F7-0B89-4EC6-84DC-F398B6DF3716",
+        "fromId": "oryx_7D22B9C7-F193-40BA-B31A-6D9F1A423D93",
+        "toId": "oryx_EC08DE2B-AB9A-4D0D-B9C6-4C1325D08C76",
+        "type": "then",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_03CF673F-AD3F-4887-9FFD-28F79BD1A26F",
+        "fromId": "oryx_60D2D13D-1474-461B-92DD-9507C12A963F",
+        "toId": "oryx_EC08DE2B-AB9A-4D0D-B9C6-4C1325D08C76",
+        "type": "then",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_1EB712B5-45FD-4DD8-9144-DAA850E72B5E",
+        "fromId": "oryx_607A73B2-3FB4-41CD-8003-4B386C502EA1",
+        "toId": "oryx_A3E5B0B7-5A56-47C0-9159-5EE8026A7BB9",
+        "type": "is_factor_of_interest_for",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_78203452-E699-4D81-AFFD-79856475A466",
+        "fromId": "oryx_1F9CF2D0-AEB6-4BD2-9433-DBBD33359151",
+        "toId": "oryx_EC08DE2B-AB9A-4D0D-B9C6-4C1325D08C76",
+        "type": "then",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_32C97BEC-9870-4C0A-9662-A593062DA774",
+        "fromId": "oryx_EC08DE2B-AB9A-4D0D-B9C6-4C1325D08C76",
+        "toId": "oryx_1991F846-7BFD-422A-A43C-0870A7F9CC41",
+        "type": "recorded_as",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_43209FCE-CB0A-4FF2-B762-E8DB2AA20CF9",
+        "fromId": "oryx_5CA98ED5-26AC-44DD-A6A2-6BFC670A9453",
+        "toId": "oryx_A3E5B0B7-5A56-47C0-9159-5EE8026A7BB9",
+        "type": "is_blocking_factor_for",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_8482024B-4B0C-4367-A18D-B533098B495D",
+        "fromId": "oryx_5CA98ED5-26AC-44DD-A6A2-6BFC670A9453",
+        "toId": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "type": "is_blocking_factor_for",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_D201E784-9443-4A2F-8E2D-84B32EE28A70",
+        "fromId": "oryx_9619A14B-F440-4300-B2C3-A025EC483596",
+        "toId": "oryx_574BA78F-DD20-42F2-8366-28E24B49D8B4",
+        "type": "uses_animals",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_7DCB1D3B-AA45-4462-8853-6C467465616D",
+        "fromId": "oryx_72C196D1-9304-4AE1-8135-B7E8E00800C2",
+        "toId": "oryx_4B442D66-9E93-49CD-AC52-D53970B85213",
+        "type": "comprises",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_DCB4FE08-DC82-47FD-B882-E03A1534EF9E",
+        "fromId": "oryx_72C196D1-9304-4AE1-8135-B7E8E00800C2",
+        "toId": "oryx_F633FA6C-DEE8-4EA5-BA97-7152FFFDC3D6",
+        "type": "subjected_to",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_3E06A1E5-A878-441E-9EB2-03E1DDF2BA17",
+        "fromId": "oryx_F633FA6C-DEE8-4EA5-BA97-7152FFFDC3D6",
+        "toId": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "type": "then",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_7FB0194F-A9BE-4C51-94DB-BD87602B7893",
+        "fromId": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "toId": "oryx_EDFC434D-224D-4307-85BD-7C62C4ED00E8",
+        "type": "produces",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_542A2DA0-EA36-40A6-AE9B-94E84F668475",
+        "fromId": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "toId": "oryx_65659885-3692-43A7-841C-38769DC89397",
+        "type": "produces",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_7E609FBF-9B70-42A1-B1E6-C063B339838C",
+        "fromId": "oryx_4D30FC52-5049-4559-8D6C-882D94A1AED9",
+        "toId": "oryx_EAC972AF-784F-4183-A6F6-1B7D0FD111FE",
+        "type": "produces",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_6894C16E-1267-478F-B621-B6CA322390F9",
+        "fromId": "oryx_EDFC434D-224D-4307-85BD-7C62C4ED00E8",
+        "toId": "oryx_7D22B9C7-F193-40BA-B31A-6D9F1A423D93",
+        "type": "subjected_to",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_32CEDB01-591C-4ADC-A091-B7910E1003B0",
+        "fromId": "oryx_65659885-3692-43A7-841C-38769DC89397",
+        "toId": "oryx_60D2D13D-1474-461B-92DD-9507C12A963F",
+        "type": "subjected_to",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_8FBC9345-AC59-4C41-BF2C-035AB8CEAA0E",
+        "fromId": "oryx_EAC972AF-784F-4183-A6F6-1B7D0FD111FE",
+        "toId": "oryx_1F9CF2D0-AEB6-4BD2-9433-DBBD33359151",
+        "type": "subjected_to",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_95954A15-61F9-45BD-A087-70237B2E96A5",
+        "fromId": "oryx_1991F846-7BFD-422A-A43C-0870A7F9CC41",
+        "toId": "oryx_6ADA59C6-4F05-4BC8-B301-36C3979CC1E2",
+        "type": "is_transformed_by",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_33EE9DCA-9CAC-4FD4-ACA0-FCAF446EEE2E",
+        "fromId": "oryx_6ADA59C6-4F05-4BC8-B301-36C3979CC1E2",
+        "toId": "oryx_A3E5B0B7-5A56-47C0-9159-5EE8026A7BB9",
+        "type": "produces_output_for",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_1E6FE7D7-F32B-4C34-B6C1-028543D77F7F",
+        "fromId": "oryx_607A73B2-3FB4-41CD-8003-4B386C502EA1",
+        "toId": "oryx_86BFA1BB-E9D5-438A-A5CF-E2A61B7603EB",
+        "type": "has_category",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_EDD58CFF-587B-442A-8BAB-0FE54428B58F",
+        "fromId": "oryx_607A73B2-3FB4-41CD-8003-4B386C502EA1",
+        "toId": "oryx_9EBFFFDE-03F3-4C2E-953C-082A05273C98",
+        "type": "has_category",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_B36F95A2-2B06-44C1-8039-A560E8674264",
+        "fromId": "oryx_607A73B2-3FB4-41CD-8003-4B386C502EA1",
+        "toId": "oryx_5A200187-C4B8-4090-9AF7-89FD6DD92EDF",
+        "type": "has_category",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_914BEB50-3204-4E53-8CF2-5FD1E8284E8D",
+        "fromId": "oryx_5CA98ED5-26AC-44DD-A6A2-6BFC670A9453",
+        "toId": "oryx_8E81820C-3CD0-499F-8306-8450F5FFECBF",
+        "type": "has_category",
+        "properties": {},
+        "style": {}
+      },
+      {
+        "id": "oryx_97A6E627-9336-462E-A97A-FFA089A1E8C6",
+        "fromId": "oryx_5CA98ED5-26AC-44DD-A6A2-6BFC670A9453",
+        "toId": "oryx_E7D8D852-3449-47C7-B271-914489BE1F48",
+        "type": "has_category",
+        "properties": {},
+        "style": {}
+      }
+    ],
+    "style": {
+      "font-family": "sans-serif",
+      "background-color": "#ffffff",
+      "background-image": "",
+      "background-size": "100%",
+      "node-color": "#ffffff",
+      "border-width": 4,
+      "border-color": "#000000",
+      "radius": 50,
+      "node-padding": 5,
+      "node-margin": 2,
+      "outside-position": "auto",
+      "node-icon-image": "",
+      "node-background-image": "",
+      "icon-position": "inside",
+      "icon-size": 64,
+      "caption-position": "inside",
+      "caption-max-width": 200,
+      "caption-color": "#000000",
+      "caption-font-size": 50,
+      "caption-font-weight": "normal",
+      "label-position": "inside",
+      "label-display": "pill",
+      "label-color": "#000000",
+      "label-background-color": "#ffffff",
+      "label-border-color": "#000000",
+      "label-border-width": 4,
+      "label-font-size": 40,
+      "label-padding": 5,
+      "label-margin": 4,
+      "directionality": "directed",
+      "detail-position": "inline",
+      "detail-orientation": "parallel",
+      "arrow-width": 5,
+      "arrow-color": "#000000",
+      "margin-start": 5,
+      "margin-end": 5,
+      "margin-peer": 20,
+      "attachment-start": "normal",
+      "attachment-end": "normal",
+      "relationship-icon-image": "",
+      "type-color": "#000000",
+      "type-background-color": "#ffffff",
+      "type-border-color": "#000000",
+      "type-border-width": 0,
+      "type-font-size": 16,
+      "type-padding": 5,
+      "property-position": "outside",
+      "property-alignment": "colon",
+      "property-color": "#000000",
+      "property-font-size": 16,
+      "property-font-weight": "normal"
+    }
+  }
+}
