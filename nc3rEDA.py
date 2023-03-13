@@ -26,10 +26,14 @@ class Node():
         self.pos = (factor*self.pos[0], 
                     factor*self.pos[1])
         
-    def fstr_arrows(self):
+    def dict_arrows(self, use_gid=False):
+        if use_gid:
+            _id = self.gid
+        else:
+            _id = self.uid
+
         return {
-#             "id": self.gid,
-            "id": self.uid,
+            "id": _id,
             "position": {
                 "x": self.pos[0],
                 "y": self.pos[1]
@@ -68,13 +72,19 @@ class Edge():
         self.bbox = edge['bounds']
         self.dock = edge['dockers']
         
-    def fstr_arrows(self, gid_map):
+    def dict_arrows(self, gid_map, use_gid=False):
+        if use_gid:
+            _id = self.gid
+            _fr = gid_map[self.incoming]
+            _to = gid_map[self.outgoing]
+        else:
+            _id = self.uid
+            _fr = self.incoming
+            _to = self.outgoing
         return {
-            "id": self.gid,
-#             "fromId": gid_map[self.incoming],
-#             "toId": gid_map[self.outgoing],
-            "fromId": self.incoming,
-            "toId": self.outgoing,
+            "id": _id,
+            "fromId": _fr,
+            "toId": _to,
             "type": self.type,
             "properties": self.property,
             "style": {}
@@ -170,20 +180,20 @@ class Graph():
         nx.draw_networkx_edge_labels(
             self.__G, 
             self.__position, 
-            edge_labels=label['edge'])
+            edge_labels=self.__label['edge'])
         plt.axis('off')
         plt.show()
         
-    def export_arrows(self, fpath=None):
+    def export_arrows(self, fpath=None, indent=None):
         _dtmp = {
             "nodes": [],
             "relationships": [],
             "style": {}
                 }
         for _n in self.nodes().values():
-            _dtmp['nodes'].append(_n.fstr_arrows())
+            _dtmp['nodes'].append(_n.dict_arrows())
         for _e in self.edges().values():
-            _dtmp['relationships'].append(_e.fstr_arrows(self.__gid))
+            _dtmp['relationships'].append(_e.dict_arrows(self.__gid))
             
         _dtmp['style'] = {
                 "font-family": "sans-serif",
@@ -244,4 +254,4 @@ class Graph():
             return _darrows
         else:
             with open(fpath, 'w') as _of:
-                json.dump(_darrows, _of)
+                json.dump(_darrows, _of, indent=indent)
