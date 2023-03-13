@@ -184,16 +184,16 @@ class Graph():
         plt.axis('off')
         plt.show()
         
-    def export_arrows(self, fpath=None, indent=None):
+    def export_arrows(self, fpath=None, indent=None, use_gid=False):
         _dtmp = {
             "nodes": [],
             "relationships": [],
             "style": {}
                 }
         for _n in self.nodes().values():
-            _dtmp['nodes'].append(_n.dict_arrows())
+            _dtmp['nodes'].append(_n.dict_arrows(use_gid))
         for _e in self.edges().values():
-            _dtmp['relationships'].append(_e.dict_arrows(self.__gid))
+            _dtmp['relationships'].append(_e.dict_arrows(self.__gid, use_gid))
             
         _dtmp['style'] = {
                 "font-family": "sans-serif",
