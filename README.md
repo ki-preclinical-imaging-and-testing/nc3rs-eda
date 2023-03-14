@@ -47,6 +47,15 @@ error if the database is unavailable. It can also be used to delete all nodes
 and relationships (but due to limitations in Neo4j functionality, cannot clear
 things like property keys or indexes).
 
+## EDA Templates as Sample Data
+
+All five template diagrams provided by the EDA website have been downloaded and
+placed in `sample_eda`. These are for testing input. 
+
+Note that the initial development relies on the extracted "model" file
+contained in each one. The next stage of development requires automatically
+extracting these to simplify submission of new diagrams.
+
 ## Cypher for Neo4j
 
 Output collected from `Graph.export_neo4j_create()` can be directly loaded into
