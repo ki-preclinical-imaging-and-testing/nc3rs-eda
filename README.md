@@ -7,7 +7,7 @@ From the main directory, use the package as follows:
 
     In [ ]: import nc3rsEDA as ned
 
-    In [ ]: g = ned.Graph('model')
+    In [ ]: g = ned.Graph('example.eda')
 
     In [ ]: g.visualize()
 
