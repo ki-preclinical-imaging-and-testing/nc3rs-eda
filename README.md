@@ -5,20 +5,47 @@ Tools for NC3Rs Experimental Design Assistant (EDA).
 
 From the main directory, use the package as follows:
 
-    In [ ]: import nc3rEDA as ned
+    In [ ]: import nc3rsEDA as ned
 
     In [ ]: g = ned.Graph('model')
 
     In [ ]: g.visualize()
 
-    In [ ]: g.export_neo4j_create()
+    In [ ]: neoned = ned.Neo4jWriter(g)
+    
+    In [ ]: neoned.write()
 
-This will load any NC3Rs EDA file that comes in a custom JSON structure. 
+        labels-added               23
+        relationships-created      24
+        nodes-created              23
+        properties-set             93
+
+This will load any NC3Rs EDA file using the EDA's custom JSON.
 The example works with the included template EDA file named `model`. 
 `Graph.visualize()` produces a quick and dirty visualizion. 
-`Graph.export_neo4j_create() exports to a Cypher CREATE query for direct
 loading into a Neo4j database. 
-This exports JSON for Neo4j's Arrows.app whiteboarding tool.
+`ned.Neo4jWriter(g) provides a writer object to handle Cypher `CREATE` and `DETACH DELETE (n)` queries directly on a specified database. 
+`Graph.export_neo4j_create() exports to a Cypher CREATE query for direct
+`Graph.export_arrows() exports JSON for Neo4j's Arrows.app whiteboarding tool.
+
+## Writing to Neo4j Database
+
+When an accessible database address and authentication are provided, the
+ned.Neo4jWriter object can write directly to the database, handling all of the
+proper open and close commands that Neo4j's Python Driver requires.
+
+This results in the ability to pipe new models to the database using the
+following lines and the appropriate filename:
+
+    import nc3rsEDA 
+    g = ned.Graph('model')
+    neoned = ned.Neo4jWriter(g, uri='neo4j://localhost:7687', auth=("user","pass"))
+    neoned.write()
+
+Additionally, the Neo4jWriter tests the initial connection and will throw an
+error if the database is unavailable. It can also be used to delete all nodes
+and relationships (but due to limitations in Neo4j functionality, cannot clear
+things like property keys or indexes).
 
 ## Cypher for Neo4j
 
