@@ -1,5 +1,6 @@
-import json
 from pathlib import Path
+import zipfile
+import json
 import networkx as nx
 import matplotlib.pyplot as plt
 from neo4j import GraphDatabase
@@ -130,7 +131,7 @@ class Edge():
     
 class Graph():
     
-    def __init__(self,eda_fname = 'model'):
+    def __init__(self,eda_fname):
         self.load_eda(eda_fname = eda_fname)
         self.assemble()
 
@@ -159,9 +160,25 @@ class Graph():
             _etmp = Edge(_e, f"e{i}")
             self.__e[_etmp.uid] = _etmp
             i+=1
+
+    def extract_model(self, fname):
+        _ifp = Path(fname).absolute()
+        self.__fp_eda = _ifp
+        if not _ifp.is_file():
+            print("ERROR: Path does not lead to file!")
+            exit()
+        _ofp = _ifp.parent.joinpath(str(_ifp.stem).replace(' ','_').replace('__','_'))
+        with zipfile.ZipFile(_ifp, 'r') as zip_ref:
+            zip_ref.extractall(_ofp)
+        if not _ofp.is_dir():
+            print("ERROR: Output directory not created properly!")
+        self.__fp_model = _ofp.joinpath('model')
+
+
             
-    def load_eda(self, eda_fname = 'model'):
-        with open(eda_fname, 'r') as f:
+    def load_eda(self, eda_fname):
+        self.extract_model(eda_fname)
+        with open(self.__fp_model, 'r') as f:
             j = json.load(f)
 
         nodes = []
