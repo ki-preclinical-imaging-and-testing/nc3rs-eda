@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
+from neo4j import GraphDatabase
 
 def property_dict_to_cypher(_dict):
     _i = 0
@@ -295,22 +296,72 @@ class Graph():
             with open(fpath, 'w') as _of:
                 json.dump(_darrows, _of, indent=indent)
 
-    def export_neo4j_create(self, use_gid=True):
+    def fstr_neo4j_create(self, use_gid=True):
+        _fstr = ""
         _i = 0
         for _n in self.nodes().values():
-            _fstr = _n.fstr_neo4j_create(use_gid=use_gid)
-            if _i > 0:
-                print(_fstr + ",")
-            else:
-                print("CREATE " + _fstr + ",")
             _i += 1
-        _i = 0
+            _fl = _n.fstr_neo4j_create(use_gid=use_gid)
+            if _i == 1:
+                _fstr += "CREATE " + _fl + ",\n"
+            else:
+                _fstr += _fl + ",\n"
         _l = len(self.edges())
+        _i = 0
         for _e in self.edges().values():
-            _fstr = _e.fstr_neo4j_create(self.__gid, use_gid=use_gid)
-            if _i < _l - 1:
-                print(_fstr + ",")
-            else:
-                print(_fstr)
             _i += 1
-        return
+            _fl = _e.fstr_neo4j_create(self.__gid, use_gid=use_gid)
+            if _i < _l:
+                _fstr += _fl + ",\n"
+            else:
+                _fstr += _fl
+        return _fstr
+
+
+
+class Neo4jWriter():
+
+    def __init__(self, 
+                 eda_graph, 
+                 uri = "neo4j://localhost:7687",
+                 auth = ("neo4j", "neo4jiscool")):
+
+        self.__g = eda_graph
+        self.__uri = uri
+        self.__auth = auth
+        self.verify_connection()
+
+    def verify_connection(self):
+        with GraphDatabase.driver(self.__uri, 
+                                  auth=self.__auth) as driver:
+            driver.verify_connectivity()
+
+    def write(self):
+        
+        def create_eda_record(tx):
+            result = tx.run(f"{self.__g.fstr_neo4j_create()}")
+            records = list(result)
+            summary = result.consume()
+            return records, summary
+
+        with GraphDatabase.driver(self.__uri, 
+                                  auth=self.__auth) as driver:
+            with driver.session(database="neo4j") as session:
+                records, summary = session.execute_write(create_eda_record)
+                for _k, _v in summary.metadata['stats'].items():
+                    print(f"{_k:25s} {_v:3d}")
+
+    def detach_delete_all(self):
+
+        def detach_delete_n(tx):
+            result = tx.run("MATCH (n) DETACH DELETE n")
+            records = list(result)
+            summary = result.consume()
+            return records, summary
+        
+        with GraphDatabase.driver(self.__uri, 
+                                  auth=self.__auth) as driver:
+            with driver.session(database="neo4j") as session:
+                records, summary = session.execute_write(detach_delete_n)
+                for _k, _v in summary.metadata['stats'].items():
+                    print(f"{_k:25s} {_v:3d}")
