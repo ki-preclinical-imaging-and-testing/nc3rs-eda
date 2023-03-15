@@ -1,9 +1,12 @@
 from pathlib import Path
+import os
+import glob
 import zipfile
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
 from neo4j import GraphDatabase
+
 
 def property_dict_to_cypher(_dict):
     _i = 0
@@ -21,6 +24,16 @@ def property_dict_to_cypher(_dict):
             _pstr += ", "
     _pstr += "}"
     return _pstr
+
+def load_dropbox(folder = "sample_eda"):
+    for _if in glob.glob(f"{os.path.abspath(folder)}/*.eda"):
+        print(f"ETL: Extracting and transforming {_if}...")
+        _g = Graph(_if)
+        print(f"ETL: Loading {_if}...")
+        _neo4ned = Neo4jWriter(_g)
+        _neo4ned.write()
+        print(f"ETL: Done with {_if}.")
+        print()
 
 
 class Node():
@@ -174,8 +187,6 @@ class Graph():
             print("ERROR: Output directory not created properly!")
         self.__fp_model = _ofp.joinpath('model')
 
-
-            
     def load_eda(self, eda_fname):
         self.extract_model(eda_fname)
         with open(self.__fp_model, 'r') as f:
@@ -335,14 +346,12 @@ class Graph():
         return _fstr
 
 
-
 class Neo4jWriter():
 
     def __init__(self, 
-                 eda_graph, 
+                 eda_graph = None, 
                  uri = "neo4j://localhost:7687",
                  auth = ("neo4j", "neo4jiscool")):
-
         self.__g = eda_graph
         self.__uri = uri
         self.__auth = auth
